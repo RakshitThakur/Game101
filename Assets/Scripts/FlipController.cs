@@ -6,8 +6,7 @@ public class FlipController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] GameObject player;
     
-    float x;
-    bool isFlipping = false;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +30,6 @@ public class FlipController : MonoBehaviour
         {
             LeanTween.scaleY(level, -level.transform.localScale.y, 0.5f).setEaseSpring();
             LeanTween.move(player, new Vector2(player.transform.position.x, 0f), 0.1f);
-           // player.transform.position = new Vector3(player.transform.position.x, 0f, player.transform.position.y);
-          
-
-
         }
         if(Input.GetKey(KeyCode.A))
         {
