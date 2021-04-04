@@ -29,16 +29,24 @@ public class GameManager : MonoBehaviour
     {
         if(hasKey == true)
         {
-            Debug.Log("Completed");
-           // SceneManager.LoadScene(2);
+            int y = SceneManager.GetActiveScene().buildIndex;
+            y++;
+            Physics2D.gravity = new Vector2(0f, -9.81f);
+            if(y != -1)
+            {
+                SceneManager.LoadScene(y);
+            }
+            
         }
         else
         {
-
+            Debug.Log("Get The Key");
         }
     }
     public void RestartLevel()
     {
-        Debug.Log("Restarted");
+        //Debug.Log("Restarted");
+        Physics2D.gravity = new Vector2(0f,-9.81f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
