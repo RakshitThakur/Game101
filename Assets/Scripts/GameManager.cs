@@ -37,4 +37,8 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    public void RestartLevel()
+    {
+        Debug.Log("Restarted");
+    }
 }
