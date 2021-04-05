@@ -6,6 +6,7 @@ public class MovePlatform : MonoBehaviour
 {
     [SerializeField] Transform start;
     [SerializeField] Transform end;
+    [SerializeField] GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,19 +28,20 @@ public class MovePlatform : MonoBehaviour
         {
             LeanTween.move(gameObject, start, 2f);
         }
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.parent = gameObject.transform;
+            player.transform.parent = transform;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.parent = null;
+            player.transform.parent = null;
         }
     }
 }
