@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Key
   - Wall
+  - Platform
+  - Enemy
+  - EnemyAbove
   layers:
   - Default
   - TransparentFX
@@ -13,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -42,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Top
+    uniqueID: 1005955105
     locked: 0

@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameManager gmInstance;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gmInstance = GameManager.Instance;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<GameManager>().GetComponent<GameManager>().RestartLevel();
+           gmInstance.RestartLevel();
         }
     }
 }

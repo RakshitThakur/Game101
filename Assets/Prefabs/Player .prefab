@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7378409410592860765}
   - component: {fileID: 2004575317731902314}
   - component: {fileID: 6804838452230207422}
+  - component: {fileID: 4484400068507215761}
   m_Layer: 0
   m_Name: 'Player '
   m_TagString: Player
@@ -102,7 +103,7 @@ Rigidbody2D:
   m_LinearDrag: 24.16
   m_AngularDrag: 0
   m_GravityScale: 32
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: dc5e22dfc86a31d4c9ab4fcf6f830585, type: 2}
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -120,6 +121,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  attackRange: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &6804838452230207422
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,6 +151,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &4484400068507215761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7378409410592860767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27af51ce71fd97947bb0c0370e189d7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7378409411030130268
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +213,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

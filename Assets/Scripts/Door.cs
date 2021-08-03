@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GameManager gmInstance;
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gmInstance = GameManager.Instance;
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            FindObjectOfType<GameManager>().GetComponent<GameManager>().CompleteLevel();
+            gmInstance.CompleteLevel();
         }
     }
 }

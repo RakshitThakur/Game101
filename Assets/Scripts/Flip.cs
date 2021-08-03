@@ -5,6 +5,9 @@ using UnityEngine;
 public class Flip : MonoBehaviour
 {
     [SerializeField] GameObject mainCamera;
+    
+
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +21,7 @@ public class Flip : MonoBehaviour
     }
     void UpsideDown()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !LeanTween.isTweening(mainCamera))
+        if (Input.GetKeyDown(KeyCode.Space) && !LeanTween.isTweening(mainCamera) /*&& !GameData.firstFlip*/)
         {
             LeanTween.rotateAround(mainCamera, Vector3.forward, 180f, 0.5f).setEaseSpring();
             Physics2D.gravity = -Physics2D.gravity;
