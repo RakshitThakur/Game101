@@ -33,10 +33,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        minutes = Mathf.FloorToInt(timer / 60.0f);
-        seconds = Mathf.FloorToInt(timer - minutes * 60f);
-        counter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        //timer += Time.deltaTime;
+        //minutes = Mathf.FloorToInt(timer / 60.0f);
+        //seconds = Mathf.FloorToInt(timer - minutes * 60f);
+        //counter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
     public void GotKey()
     {
