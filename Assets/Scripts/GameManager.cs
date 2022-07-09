@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
     }
     public void DisplayHealth(int health)
     {
-        playerHealthBar.value = health;
+        //playerHealthBar.value = health;
     }
     public void GetHit()
     {
