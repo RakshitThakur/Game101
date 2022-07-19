@@ -6,22 +6,9 @@ public class Flip : MonoBehaviour
 {
     [SerializeField] GameObject mainCamera;
     
-
-   
-    // Start is called before the first frame update
-    void Start()
+    public void UpsideDown()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        UpsideDown();
-    }
-    void UpsideDown()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && !LeanTween.isTweening(mainCamera) /*&& !GameData.firstFlip*/)
+       if(!LeanTween.isTweening(mainCamera) /*&& !GameData.firstFlip*/)
         {
             LeanTween.rotateAround(mainCamera, Vector3.forward, 180f, 0.5f).setEaseSpring();
             Physics2D.gravity = -Physics2D.gravity;

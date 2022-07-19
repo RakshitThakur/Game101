@@ -11,10 +11,9 @@ public class PlayerController : MonoBehaviour
     int playerHealth = 100,x, y = 1;
     Color noDamage;
 
-   
-
     GameManager gmInstance;
-    
+    bool isLeft = false;
+    bool isRight = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,15 +25,26 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      MyInput();
+        MyInput();
     }
-    private void FixedUpdate()
+    public void GoingLeft()
     {
-        
+        isLeft = true;
+    }
+    public void NotGoingLeft()
+    {
+        isLeft = false;
+    }
+    public void GoingRight()
+    {
+        isRight = true;
+    }
+    public void NotGoingRight()
+    {
+        isRight = false;
     }
     void MyInput()
     {
-        
         if (Physics2D.gravity.y > 0)
         {
             x = -1;
@@ -43,12 +53,12 @@ public class PlayerController : MonoBehaviour
         {
             x = 1;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (isLeft)
         {
             y = -1;
             rb.velocity = new Vector2(-moveSpeed * x, rb.velocity.y);
         }
-        if (Input.GetKey(KeyCode.D))
+        if (isRight)
         {
             y = 1;
             rb.velocity = new Vector2(moveSpeed * x, rb.velocity.y);
@@ -65,13 +75,10 @@ public class PlayerController : MonoBehaviour
                 {
                     enemy.gameObject.SetActive(false);
                 }
-                
-
             }
         }
-        
-
     }
+
     void TakeDamage()
     {
         playerHealth -= 1;
