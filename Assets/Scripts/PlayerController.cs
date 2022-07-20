@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -8,12 +10,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float moveSpeed;
     [SerializeField] float attackRange;
     [SerializeField] LayerMask enemyLayer;
+    [SerializeField] GameObject pausedPanel;
+    [SerializeField] TextMeshProUGUI timeText;
+    [SerializeField] TextMeshProUGUI timer2Text;
+    [SerializeField] TextMeshProUGUI timer3Text;
+    [SerializeField] GameObject gameplayHUD;
+    [SerializeField] GameObject deathPanel;
     int playerHealth = 100,x, y = 1;
     Color noDamage;
 
     GameManager gmInstance;
+
     bool isLeft = false;
-    bool isRight = true;
+    bool isRight = false;
+    private float timer;
+    private float minutes;
+    private float seconds;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +37,16 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MyInput();
+        if(!GameManager.isDead)
+        {
+            PLayerRepo.time += Time.deltaTime;
+            minutes = Mathf.FloorToInt(PLayerRepo.time / 60.0f);
+            seconds = Mathf.FloorToInt(PLayerRepo.time - minutes * 60f);
+            timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timer2Text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timer3Text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            MyInput();
+        }
     }
     public void GoingLeft()
     {
@@ -108,5 +129,34 @@ public class PlayerController : MonoBehaviour
             GetComponent<Renderer>().material.color = noDamage;
         }
     }
-
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        pausedPanel.SetActive(true);
+        gameplayHUD.SetActive(false);
+    }
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        gameplayHUD.SetActive(true);
+        pausedPanel.SetActive(false);
+    }
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        PLayerRepo.time = 0f;
+        CustomSceneManager.instance.GoBack(0f);
+    }
+    public void SimpleRestart()
+    {
+        PLayerRepo.time = 1;
+        deathPanel.SetActive(false);
+        gameplayHUD.SetActive(true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void DeadManWalking()
+    {
+        deathPanel.SetActive(true);
+        gameplayHUD.SetActive(false);
+    }
 }

@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 28878163239731456}
   - {fileID: 28878162890063175}
@@ -86,6 +87,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053982549235542113}
     m_Modifications:
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2082825457712908566, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
       propertyPath: m_Name
       value: Spike (3)
@@ -148,6 +161,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053982549235542113}
     m_Modifications:
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2082825457712908566, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
       propertyPath: m_Name
       value: Spike
@@ -210,6 +235,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053982549235542113}
     m_Modifications:
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2082825457712908566, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
       propertyPath: m_Name
       value: Spike (1)
@@ -272,6 +309,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053982549235542113}
     m_Modifications:
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2082825457712908566, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
       propertyPath: m_Name
       value: Spike (4)
@@ -334,6 +383,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2053982549235542113}
     m_Modifications:
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082825457712908561, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2082825457712908566, guid: 0c78c87bd8518c24eb009ca5531b028c, type: 3}
       propertyPath: m_Name
       value: Spike (2)

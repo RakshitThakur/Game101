@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-
+    public static bool isDead = false;
     bool hasKey;
     [SerializeField] GameObject Key;
     [SerializeField] Slider playerHealthBar;
@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
     float timer = 0.0f;
     int minutes, seconds;
     public float enemyHealth = 100f;
+    
     // Start is called before the first frame update
 
     private void Awake()
-    {   
+    {
+        isDead = false;
         if(Instance == null)
         {
             Instance = this;
@@ -29,15 +31,7 @@ public class GameManager : MonoBehaviour
         hasKey = false;
         Key.GetComponent<SpriteRenderer>().enabled = false;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //timer += Time.deltaTime;
-        //minutes = Mathf.FloorToInt(timer / 60.0f);
-        //seconds = Mathf.FloorToInt(timer - minutes * 60f);
-        //counter.text = string.Format("{0:00}:{1:00}", minutes, seconds);
-    }
+  
     public void GotKey()
     {
         hasKey = true;
@@ -53,9 +47,10 @@ public class GameManager : MonoBehaviour
             Physics2D.gravity = new Vector2(0f, -9.81f);
             if(y != -1)
             {
+                if(PLayerRepo.CurrentGameMode == GameMode.Online)
+                    AuthManager.instance.UpdateLeaderBoardEntry((int)PLayerRepo.time);
                 SceneManager.LoadScene(y);
             }
-            
         }
         else
         {
@@ -64,10 +59,20 @@ public class GameManager : MonoBehaviour
     }
     public void RestartLevel()
     {
+        GameManager.isDead = true;
         //Debug.Log("Restarted");
         Physics2D.gravity = new Vector2(0f,-9.81f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if(PLayerRepo.QuickRestart)
+        {
+            PLayerRepo.time = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else
+        {
+            FindObjectOfType<PlayerController>().DeadManWalking();
+        }
     }
+    
     public void DisplayHealth(int health)
     {
         //playerHealthBar.value = health;

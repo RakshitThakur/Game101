@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://luciddreams-ea31c-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+  <string name="gcm_defaultSenderId" translatable="false">1013114759308</string>
+  <string name="google_storage_bucket" translatable="false">luciddreams-ea31c.appspot.com</string>
+  <string name="project_id" translatable="false">luciddreams-ea31c</string>
+  <string name="google_api_key" translatable="false">AIzaSyBFxp-dx83MrRzCJWubNu4eWqUWcGRFjr0</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBFxp-dx83MrRzCJWubNu4eWqUWcGRFjr0</string>
+  <string name="google_app_id" translatable="false">1:1013114759308:android:fc25caa14b0fcee379b3a9</string>
+  <string name="default_android_client_id" translatable="false">1013114759308-qlqcme81sr5m9lv7k0euetjklk110o6o.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">1013114759308-tj5pa2fhqk8t60k068uhjdmvl9t85bdc.apps.googleusercontent.com</string>
+</resources>

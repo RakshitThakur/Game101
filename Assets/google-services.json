@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1013114759308",
+    "firebase_url": "https://luciddreams-ea31c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "luciddreams-ea31c",
+    "storage_bucket": "luciddreams-ea31c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013114759308:android:fc25caa14b0fcee379b3a9",
+        "android_client_info": {
+          "package_name": "com.AraAra.LucidDreams"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013114759308-qlqcme81sr5m9lv7k0euetjklk110o6o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.AraAra.LucidDreams",
+            "certificate_hash": "50ee7eb10fa95b6a2c34c05b2bdffca7da25afeb"
+          }
+        },
+        {
+          "client_id": "1013114759308-tj5pa2fhqk8t60k068uhjdmvl9t85bdc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFxp-dx83MrRzCJWubNu4eWqUWcGRFjr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013114759308-tj5pa2fhqk8t60k068uhjdmvl9t85bdc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
