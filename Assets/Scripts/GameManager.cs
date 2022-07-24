@@ -10,16 +10,17 @@ public class GameManager : MonoBehaviour
     public static bool isDead = false;
     bool hasKey;
     [SerializeField] GameObject Key;
-    [SerializeField] Slider playerHealthBar;
-    [SerializeField] Text counter;
-    float timer = 0.0f;
-    int minutes, seconds;
+    [SerializeField] GameObject keyFX;
     public float enemyHealth = 100f;
-    
+    [SerializeField] GameObject endCanvas = null;
+    [SerializeField] GameObject keyCanvas = null;
     // Start is called before the first frame update
 
     private void Awake()
     {
+        keyCanvas.SetActive(false);
+        if(endCanvas != null)
+            endCanvas.SetActive(false);
         isDead = false;
         if(Instance == null)
         {
@@ -35,8 +36,8 @@ public class GameManager : MonoBehaviour
     public void GotKey()
     {
         hasKey = true;
-
-        Key.GetComponent<SpriteRenderer>().enabled = true;   
+        Key.GetComponent<SpriteRenderer>().enabled = true;
+        keyFX.SetActive(true);
     }
     public void CompleteLevel()
     {
@@ -47,14 +48,22 @@ public class GameManager : MonoBehaviour
             Physics2D.gravity = new Vector2(0f, -9.81f);
             if(y != -1)
             {
+                isDead=true;
                 if(PLayerRepo.CurrentGameMode == GameMode.Online)
-                    AuthManager.instance.UpdateLeaderBoardEntry((int)PLayerRepo.time);
-                SceneManager.LoadScene(y);
+                    AuthManager.instance.UpdateLeaderBoardEntry((y-3),(int)PLayerRepo.time);
+                PLayerRepo.time = 0;
+                if(y != 5)
+                    SceneManager.LoadScene(y);
+                else
+                {
+                    endCanvas.SetActive(true);
+                }
             }
         }
         else
         {
             Debug.Log("Get The Key");
+            keyCanvas.SetActive(true);
         }
     }
     public void RestartLevel()

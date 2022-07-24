@@ -56,14 +56,14 @@ public class AuthManager : MonoBehaviour
 
     }
 
-    public void RefreshLeaderBoard(Transform container, GameObject prefab)
+    public void RefreshLeaderBoard(int level, Transform container, GameObject prefab)
     {
-        StartCoroutine(LoadScoreboardData(container, prefab));
+        StartCoroutine(LoadScoreboardData(level, container, prefab));
     }
-    private IEnumerator LoadScoreboardData(Transform container, GameObject prefab)
+    private IEnumerator LoadScoreboardData(int level, Transform container, GameObject prefab)
     {
         //Get all the users data ordered by kills amount
-        var DBTask = DBreference.Child("users").OrderByChild("time").GetValueAsync();
+        var DBTask = DBreference.Child("users").Child(level.ToString()).OrderByChild("time").GetValueAsync();
 
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -97,10 +97,10 @@ public class AuthManager : MonoBehaviour
             }
         }
     }
-    private IEnumerator UpdateTime(int time)
+    private IEnumerator UpdateTime(int level, int time)
     {
         //Set the currently logged in user xp
-        var DBTask = DBreference.Child("users").Child(User.UserId).Child("time").SetValueAsync(time);
+        var DBTask = DBreference.Child("users").Child(level.ToString()).Child(User.UserId).Child("time").SetValueAsync(time);
 
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -113,10 +113,10 @@ public class AuthManager : MonoBehaviour
             //Xp is now updated
         }
     }
-    private IEnumerator UpdateUserName(string username)
+    private IEnumerator UpdateUserName(int level, string username)
     {
         //Set the currently logged in user xp
-        var DBTask = DBreference.Child("users").Child(User.UserId).Child("username").SetValueAsync(username);
+        var DBTask = DBreference.Child("users").Child(level.ToString()).Child(User.UserId).Child("username").SetValueAsync(username);
 
         yield return new WaitUntil(predicate: () => DBTask.IsCompleted);
 
@@ -129,9 +129,9 @@ public class AuthManager : MonoBehaviour
             //Xp is now updated
         }
     }
-    public void UpdateLeaderBoardEntry(int time)
+    public void UpdateLeaderBoardEntry(int level, int time)
     {
-        StartCoroutine(UpdateTime(time));
-        StartCoroutine(UpdateUserName(User.DisplayName));
+        StartCoroutine(UpdateTime(level, time));
+        StartCoroutine(UpdateUserName(level, User.DisplayName));
     }
 }

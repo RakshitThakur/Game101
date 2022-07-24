@@ -149,13 +149,17 @@ public class PlayerController : MonoBehaviour
     }
     public void SimpleRestart()
     {
-        PLayerRepo.time = 1;
+        Physics2D.gravity = new Vector2(0f, -9.8f);
+        PLayerRepo.time = 0;
+        Time.timeScale = 1;
         deathPanel.SetActive(false);
         gameplayHUD.SetActive(true);
+        pausedPanel.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void DeadManWalking()
     {
+        Time.timeScale = 0;
         deathPanel.SetActive(true);
         gameplayHUD.SetActive(false);
     }

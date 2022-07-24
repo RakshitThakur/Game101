@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1013114759308-5to5c6238v1t9mr000r6bkmvj4v2jtne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.AraAra.LucidDreams",
+            "certificate_hash": "473c133843bae7981eb17adc22f6485e8ec9db96"
+          }
+        },
+        {
           "client_id": "1013114759308-qlqcme81sr5m9lv7k0euetjklk110o6o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

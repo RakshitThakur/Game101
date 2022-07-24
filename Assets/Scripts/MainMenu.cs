@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Awake()
+    {
+        Physics2D.gravity = new Vector2(0f,-9.8f);
+    }
     public void OnPlay()
     {
         PLayerRepo.CurrentGameMode = GameMode.Online;

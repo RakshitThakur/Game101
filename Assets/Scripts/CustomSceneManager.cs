@@ -61,7 +61,7 @@ public class CustomSceneManager : MonoBehaviour
     }
     private IEnumerator IELoadSceneAsync(string sceneName, string menu, float disableDelay)
     {
-        //EnableLoadingScreen();
+        EnableLoadingScreen();
         StartCoroutine(IEEnableTransition());
         var task = SceneManager.LoadSceneAsync(sceneName);
         while (!task.isDone)
@@ -71,7 +71,7 @@ public class CustomSceneManager : MonoBehaviour
 
         StartCoroutine(IEDisableTransition(disableDelay));
 
-        //DisableLoadingScreen();
+        DisableLoadingScreen();
         if (menu != null)
         {
             MenuManager.Instance.OpenMenu(menu);

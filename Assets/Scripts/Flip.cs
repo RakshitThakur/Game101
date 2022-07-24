@@ -3,6 +3,7 @@ using UnityEngine;
 public class Flip : MonoBehaviour
 {
     GameObject mainCamera;
+    [SerializeField] private AudioSource audioSource;
     private void Awake()
     {
         mainCamera = Camera.main.gameObject;
@@ -13,6 +14,7 @@ public class Flip : MonoBehaviour
         {
             LeanTween.rotateAround(mainCamera, Vector3.forward, 180f, 0.5f).setEaseSpring();
             Physics2D.gravity = -Physics2D.gravity;
+            audioSource.Play();
         }
     }
 }
